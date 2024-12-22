@@ -35,7 +35,7 @@ async function deleteTodo(id) {
 
 function renderToDoList(todos) {
   const todoListDiv = document.querySelector('.js-todo-list');
-  todoListDiv.innerHTML = ''; // Clear the list
+  todoListDiv.innerHTML = ''; 
   todos.forEach((todo) => {
     const todoHTML = `
       <div class="todo-item">
