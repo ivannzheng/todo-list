@@ -35,16 +35,20 @@ async function deleteTodo(id) {
 
 function renderToDoList(todos) {
   const todoListDiv = document.querySelector('.js-todo-list');
-  todoListDiv.innerHTML = '';
+  todoListDiv.innerHTML = ''; // Clear the list
   todos.forEach((todo) => {
     const todoHTML = `
       <div class="todo-item">
-        <span>${todo.name} || ${todo.due_date}</span>
+        <span>${todo.name}</span>
+        <span>${todo.due_date}</span>
         <button class="delete-button" onclick="deleteTodo(${todo.id})">Delete</button>
       </div>
     `;
     todoListDiv.innerHTML += todoHTML;
   });
 }
+
+
+
 
 fetchTodos();
