@@ -7,15 +7,15 @@ class Todo(db.Model):
     name = db.Column(db.String(), nullable=False)
     due_date = db.Column(db.Date, nullable=True)
 
-def serialize(self):
-    if self.due_date:
-        due_date = self.due_date.strftime('%Y-%m-%d')
-    else:
-        due_date = None
+    def serialize(self):
+        if self.due_date:
+            due_date = self.due_date.strftime('%Y-%m-%d')
+        else:
+            due_date = None
 
-    return {
-        "id": self.id,
-        "name": self.name,
-        "due_date": due_date,
-    }
+        return {
+            "id": self.id,
+            "name": self.name,
+            "due_date": due_date,
+        }
 
